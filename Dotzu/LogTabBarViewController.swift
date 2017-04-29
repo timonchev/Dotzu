@@ -12,9 +12,9 @@ class LogTabBarViewController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewControllers = [UIStoryboard(name: "Logs", bundle: nil).instantiateInitialViewController()!,
-                           UIStoryboard(name: "Application", bundle: nil).instantiateInitialViewController()!,
-                           UIStoryboard(name: "Settings", bundle: nil).instantiateInitialViewController()!]
+        viewControllers = [UIStoryboard(name: "Logs", bundle: Bundle(for: Dotzu.self)).instantiateInitialViewController()!,
+                           UIStoryboard(name: "Application", bundle: Bundle(for: Dotzu.self)).instantiateInitialViewController()!,
+                           UIStoryboard(name: "Settings", bundle: Bundle(for: Dotzu.self)).instantiateInitialViewController()!]
         tabBar.tintColor = Color.mainGreen
         if tabBar.items?.count ?? 0 > 2 && LogViewNotification.countCrash > 0 {
             tabBar.items?[1].badgeValue = "\(LogViewNotification.countCrash) crashes"
