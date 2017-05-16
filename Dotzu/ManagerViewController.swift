@@ -107,6 +107,6 @@ class ManagerViewController: UIViewController, LogHeadViewDelegate {
         if Dotzu.sharedManager.displayedList {
             return true
         }
-        return self.button.frame.contains(point)
+        return true
     }
 }
