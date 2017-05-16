@@ -49,6 +49,24 @@ public class Dotzu: NSObject {
     public func setButtonVisible(visible: Bool) {
         self.controller.button.isHidden = !visible
     }
+    
+    public func addToggleWithGestureRecognizer(recognizer: UIGestureRecognizer) {
+        self.view.addGestureRecognizer(recognizer)
+        class Invoker {
+                var action:() -> ()
+                init(action:@escaping () -> ()) {
+                    self.action = action
+                }
+                func invokeTarget(nizer: UIGestureRecognizer) {
+                    self.action()
+                    print("Hi from invoker")
+                }
+            }
+        tapEnabler.addTarget(Invoker(action: {
+                setButtonVisible(visible: !self.controller.button.isHidden
+            }), action: "invokeTarget:")
+
+    }
 
     override init() {
         self.window = ManagerWindow(frame: UIScreen.main.bounds)
