@@ -63,7 +63,7 @@ public class Dotzu: NSObject {
                 }
             }
         tapEnabler.addTarget(Invoker(action: {
-                setButtonVisible(visible: !self.controller.button.isHidden
+                setButtonVisible(visible: !self.controller.button.isHidden)
             }), action: "invokeTarget:")
 
     }
