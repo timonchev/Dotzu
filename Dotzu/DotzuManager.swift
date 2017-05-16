@@ -51,7 +51,7 @@ public class Dotzu: NSObject {
     }
     
     public func addToggleWithGestureRecognizer(recognizer: UIGestureRecognizer) {
-        self.view.addGestureRecognizer(recognizer)
+        self.controller.view.addGestureRecognizer(recognizer)
         class Invoker {
                 var action:() -> ()
                 init(action:@escaping () -> ()) {
@@ -62,7 +62,7 @@ public class Dotzu: NSObject {
                     print("Hi from invoker")
                 }
             }
-        tapEnabler.addTarget(Invoker(action: {
+        recognizer.addTarget(Invoker(action: {
                 setButtonVisible(visible: !self.controller.button.isHidden)
             }), action: "invokeTarget:")
 
