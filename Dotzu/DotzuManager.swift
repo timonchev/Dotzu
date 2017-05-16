@@ -45,6 +45,10 @@ public class Dotzu: NSObject {
     public func addLogger(session: URLSessionConfiguration) {
         session.protocolClasses?.insert(LoggerNetwork.self, at: 0)
     }
+    
+    public func setButtonVisible(visible: Bool) {
+        self.controller.button.isHidden = !visible
+    }
 
     override init() {
         self.window = ManagerWindow(frame: UIScreen.main.bounds)
