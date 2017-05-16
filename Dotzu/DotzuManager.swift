@@ -63,7 +63,7 @@ public class Dotzu: NSObject {
                 }
             }
         recognizer.addTarget(Invoker(action: {
-                setButtonVisible(visible: !self.controller.button.isHidden)
+                self.setButtonVisible(visible: !self.controller.button.isHidden)
             }), action: "invokeTarget:")
 
     }
