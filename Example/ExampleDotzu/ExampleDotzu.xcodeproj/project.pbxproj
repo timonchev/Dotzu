@@ -132,10 +132,9 @@
 			};
 			buildConfigurationList = BBF9FA521ECB9041003227BE /* Build configuration list for PBXProject "ExampleDotzu" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				English,
 				en,
 				Base,
 			);
