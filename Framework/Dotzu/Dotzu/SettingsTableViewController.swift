@@ -55,8 +55,6 @@ class SettingsTableViewController: UITableViewController {
         switchResetLogs.onTintColor = Color.mainGreen
         switchDisplayDate.onTintColor = Color.mainGreen
         switchNetworkEnable.onTintColor = Color.mainGreen
-
-        UIApplication.shared.statusBarStyle = .lightContent
         setNeedsStatusBarAppearanceUpdate()
 
         switchOverridePrint.tag = 1
