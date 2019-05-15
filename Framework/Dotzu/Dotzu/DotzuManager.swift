@@ -45,28 +45,6 @@ import UIKit
     public func addLogger(session: URLSessionConfiguration) {
         session.protocolClasses?.insert(LoggerNetwork.self, at: 0)
     }
-    
-    public func setButtonVisible(visible: Bool) {
-        self.controller.button.isHidden = !visible
-    }
-    
-    public func addToggleWithGestureRecognizer(recognizer: UIGestureRecognizer) {
-        self.controller.view.addGestureRecognizer(recognizer)
-        class Invoker {
-                var action:() -> ()
-                init(action:@escaping () -> ()) {
-                    self.action = action
-                }
-                @objc func invokeTarget(nizer: UIGestureRecognizer) {
-                    self.action()
-                    print("Hi from invoker")
-                }
-            }
-        recognizer.addTarget(Invoker(action: {
-                self.setButtonVisible(visible: !self.controller.button.isHidden)
-        }), action: #selector(Invoker.invokeTarget(nizer:)))
-
-    }
 
     override init() {
         self.window = ManagerWindow(frame: UIScreen.main.bounds)
