@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class Dotzu: NSObject {
+@objcMembers public class Dotzu: NSObject {
     public static let sharedManager = Dotzu()
     private var window: ManagerWindow
     fileprivate let controller = ManagerViewController()
