@@ -34,6 +34,7 @@ class ManagerWindow: UIWindow {
     // We need them to be forwarded to other window, notably, our tweak window
     override func motionBegan(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
         UIApplication.shared.windows.forEach { window in
+            guard window !== self else { return }
             window.motionBegan(motion, with: event)
         }
         super.motionBegan(motion, with: event)
@@ -41,6 +42,7 @@ class ManagerWindow: UIWindow {
 
     override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
         UIApplication.shared.windows.forEach { window in
+            guard window !== self else { return }
             window.motionEnded(motion, with: event)
         }
         super.motionEnded(motion, with: event)
