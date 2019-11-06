@@ -26,6 +26,7 @@ class LogNavigationViewController: UINavigationController {
     }
 
     @objc func exit() {
+        Dotzu.sharedManager.displayedList = false
         dismiss(animated: true, completion: nil)
     }
 }
